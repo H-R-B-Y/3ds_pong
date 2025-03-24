@@ -1,0 +1,31 @@
+{
+	"files.associations": {
+		"brew_bgr.h": "c",
+		"3ds.h": "c",
+		"sslc.h": "c",
+		"httpc.h": "c",
+		"irrst.h": "c",
+		"hid.h": "c",
+		"gsplcd.h": "c",
+		"nfc.h": "c",
+		"result.h": "c",
+		"types.h": "c",
+		"qtm.h": "c",
+		"news.h": "c",
+		"linear.h": "c",
+		"mappable.h": "c",
+		"vram.h": "c",
+		"gfx.h": "c",
+		"citro2d.h": "c",
+		"citro3d.h": "c",
+		"tex3ds.h": "c",
+		"base.h": "c",
+		"spritesheet.h": "c",
+		"sprite.h": "c",
+		"font.h": "c",
+		"text.h": "c",
+		"texenv.h": "c",
+		"mtxstack.h": "c",
+		"maths.h": "c"
+	}
+}
