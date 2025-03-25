@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 12:30:43 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/03/24 13:58:09 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/03/25 12:42:16 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,6 @@ void	main_loop(t_meta *meta)
 		do_physics_checks(meta, changed);
 		draw_top(meta);
 		// draw_bottom(meta);
-		// gfxFlushBuffers();
-		// gfxSwapBuffers();
-		// gspWaitForVBlank();
 	}
 }
 

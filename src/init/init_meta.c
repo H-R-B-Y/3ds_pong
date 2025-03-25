@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 12:43:26 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/03/24 14:28:35 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/03/24 23:18:33 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_ball	init_ball(t_pos pos)
 {
 	return ((t_ball){
 		.pos = pos,
-		.velocity = init_vec(0.5, 0.5),
+		.velocity = init_vec(3, 3),
 		.size = 2
 	});
 }

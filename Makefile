@@ -6,7 +6,7 @@ TOPDIR ?= $(CURDIR)
 include $(DEVKITARM)/3ds_rules
 
 
-NAME		:= test
+NAME		:= stupid_pong
 BUILD		:= build
 SOURCES		:= src src/init
 DATA		:=
@@ -42,7 +42,7 @@ ARCH    := \
 			-mtp=soft
 
 # Compiler flags
-CFLAGS	:=	-g -Wall -O2 -mword-relocations \
+CFLAGS	:=	-Wall -Wextra -Werror -Ofast -mword-relocations \
 			-ffunction-sections \
 			$(ARCH)
 

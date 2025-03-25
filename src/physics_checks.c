@@ -6,7 +6,7 @@
 /*   By: hbreeze <hbreeze@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 13:45:32 by hbreeze           #+#    #+#             */
-/*   Updated: 2025/03/24 14:29:16 by hbreeze          ###   ########.fr       */
+/*   Updated: 2025/03/24 23:20:21 by hbreeze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 
 void	move_paddles(t_meta *meta, t_pos changed)
 {
-	float friction = 0.99f;  // Friction factor (tweak as needed)
-	float epsilon = 0.01f;  // Minimum velocity to consider it stopped
+	float friction = 0.95f;  // Friction factor (tweak as needed)
+	float epsilon = 0.001f;  // Minimum velocity to consider it stopped
+
 	if (!changed.x)
 	{
 		meta->paddles[0].velocity.y *= friction;
@@ -49,18 +50,17 @@ void	check_ball_collide(t_meta *meta)
 		meta->ball.velocity.y *= -1;
 }
 
-#define MAX_ANGLE 45.0f // Max bounce angle in degrees
 void	calc_ball_paddle(t_meta *meta, t_ball *ball, t_paddle *paddle)
 {
-	float relative_intersect_y = (ball->pos.y - paddle->pos.y) / (meta->paddle_height / 2);
-	float bounce_angle = relative_intersect_y * MAX_ANGLE * (M_PI / 180.0f); // Convert to radians
-
-	// Speed stays the same, but angle changes
-	float speed = sqrt(ball->velocity.x * ball->velocity.x + ball->velocity.y * ball->velocity.y);
+	float	relative_intersect_y;
+	float	bounce_angle;
+	float	speed;
+	
+	relative_intersect_y = (ball->pos.y - paddle->pos.y) / (meta->paddle_height / 2);
+	bounce_angle = relative_intersect_y * 45.0f * (M_PI / 180.0f); // Convert to radians
+	speed = sqrt(ball->velocity.x * ball->velocity.x + ball->velocity.y * ball->velocity.y);
 	ball->velocity.x = speed * cos(bounce_angle);
 	ball->velocity.y = speed * sin(bounce_angle);
-
-	// Make sure ball always moves toward the opponent
 	if (paddle == &meta->paddles[0])
 		ball->velocity.x = fabs(ball->velocity.x); // Ensure it moves right
 	else
